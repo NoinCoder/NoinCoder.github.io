@@ -1,13 +1,28 @@
 ---
 layout: page
 title: About
-sidebar_link: true
 ---
 
 <p class="message">
-  Hey there! This page is included as an example. Feel free to customize it
-  for your own use upon downloading. Carry on!
+  여기는 주로 엔진을 다루는 기술 블로그로 구성할 예정입니다. unreal engine 4를 우선으로 다룹니다.
 </p>
 
-To make pages show up in the sidebar, add `sidebar_link: true` to the front
-matter.
+언리얼엔진4로 작업한 건 4년정도 되는 것 같네요. 하지만 일정에 치이다 보니 정리라는 것을 거의 한 게 없습니다. 단편적 메모와 머리속에 들어 있는 것들이 전부군요. 그마저도 요즘 기억력 감퇴현상에 자꾸 사라지네요. 기록을 하지 않으면 다 사라질지도 모르죠. 기술 블로그라는 것을 처음으로 해보는 것이기도 하고 게을러서 잘 꾸려 나갈지 자신이 없지만 꾸준히 해볼 생각입니다. 여기서 주로 다루는 내용들은 **블루프린트** 보다는 **C++** 로 작업하는 내용이 될 것입니다.  그리고 타겟은 **모바일**이 되겠습니다.
+
+
+
+**주로 다루는 내용들**
+
+* 엔진 설정
+* 기능 설명
+* 최적화 
+* 빌드 시스템
+* 배포 & 유지
+
+
+
+언리얼은 엔진 코드가 자주 바뀌는 엔진이라 코드에 대해 너무 깊이 들어가면 최신 버전에서 사용불가 한 것들이 많기 때문에 자세한 코드 없습니다. 설명을 위한 간단한 코드 정도입니다.
+
+
+
+`by NoinCoder`
