@@ -3,9 +3,9 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            Hydeout
+title:            NoinCoder
 tagline:          'A Jekyll theme'
-description:      'The <a href="http://hyde.getpoole.com" target="_blank">Hyde</a> theme for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, refreshed.'
+description:      'Game Programming'
 url:              https://noincoder.github.io
 baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
@@ -35,6 +35,6 @@ sidebar_home_link:  true
                                 # set this to the root of the paginate_path
                                 # to enable a separate blog link.
 github:
-  repo:             https://github.com/fongandrew/hydeout
+  repo:             https://github.com/NoinCoder/NoinCoder.github.io
 
 theme: jekyll-theme-modernist
