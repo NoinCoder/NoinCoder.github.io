@@ -1,0 +1,73 @@
+# 언리얼 4 Build.cs 설정
+
+1. **의존 모듈 선언**
+
+   + PublicDependencyModuleNames
+
+     + 해당 모듈의 Public 폴더에 선언된 Header에 접근이 가능합니다.
+
+   + PrivateDependencyModuleNames
+
+     + 해당 모듈의 Private 폴더에 선언된 Header에 접근이 가능합니다.
+
+   + DynamicallyLoadedModuleNames
+
+     + 동적으로 로드 하고 싶은 모듈을 선언합니다.
+
+     ```c#
+     public class PMachine : ModuleRules
+     {
+     	public PMachine(ReadOnlyTargetRules Target) : base(Target)
+     	{
+     		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+     
+     		// 사용할 Public Module 이름을 추가 해줍니다. 
+     		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+     		// 사용할 Private Module 이름을 추가 해줍니다.
+     		PrivateDependencyModuleName.AddRange(new string[] { "Slate", "SlateCore" });
+     	}
+     }
+     ```
+
+2. **포함 폴더 선언**
+
+   + 최근 엔진 버전에서는 프로젝트 생성하면 기본적으로 설정이 안되어 있습니다. **include** 할 경우 해당 모듈 폴더의 상대경로를 줄이고 싶을 때  추가 해주면 됩니다. 저 같은 경우는 사용하지 않는 편입니다. 마찬가지로 **Public**, **Private** 따로 설정해 주어야 합니다.
+
+   + 자신의 모듈에서 경로를 줄이고 싶을 때
+
+     + **PrivateIncludePaths, PublicIncludePaths**
+
+     ~~~c#
+     public class PMachine : ModuleRules
+     {
+     	public PMachine(ReadOnlyTargetRules Target) : base(Target)
+     	{
+     		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+     		
+     		PrivateIncludePaths.AddRange(new string[] { "PMachine/Private" });
+     		PublicIncludePaths.AddRange(new string[] { "PMachine/Public" });
+     	}
+     }
+     ~~~
+
+   + 다른 모듈에서 해당 모듈의 줄인 경로를 사용하고 싶을 때
+
+     + **PrivateIncludePathModuleNames, PublicIncludePathMoudleNames** 
+
+     ~~~c#
+     public class PMachine : ModuleRules
+     {
+     	public PMachine(ReadOnlyTargetRules Target) : base(Target)
+     	{
+     		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+     		
+     		PrivateIncludePathModuleNames.AddRange(new string[] { "모듈이름" });
+     		PublicIncludePathModuleNames.AddRange(new string[] { "모듈이름" });
+     	}
+     }
+     ~~~
+
+3. **기타 설정들**
+
+  + [언리얼 4 문서 링크](http://api.unrealengine.com/KOR/Programming/UnrealBuildSystem/ModuleFiles/)
+
